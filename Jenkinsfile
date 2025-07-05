@@ -29,5 +29,4 @@ pipeline {
                 sh 'docker run siri-docker-app'
             }
         }
-    }
-}
+    
