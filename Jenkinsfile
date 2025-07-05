@@ -3,14 +3,10 @@ pipeline {
 
     stages {
         stage('Clone Code') {
-            
-        git url: 'https://github.com/SiriDE9441/devops-java-maven-docker-pipeline.git', branch: 'main'
-    }
-}
-
-    }
-// Replace with your repo URL
-        
+            steps {
+                git url: 'https://github.com/SiriDE9441/devops-java-maven-docker-pipeline.git', branch: 'main'
+            }
+        }
 
         stage('Build with Maven') {
             steps {
@@ -29,4 +25,7 @@ pipeline {
                 sh 'docker run siri-docker-app'
             }
         }
+    }
+}
+
     
