@@ -3,12 +3,14 @@ pipeline {
 
     stages {
         stage('Clone Code') {
-            steps {
-                git branch: 'main', url: 'https://github.com/SiriDE9441/devops-java-maven-docker-pipeline.git'
+            
+        git url: 'https://github.com/SiriDE9441/devops-java-maven-docker-pipeline.git', branch: 'main'
     }
-} // Replace with your repo URL
-            }
-        }
+}
+
+    }
+// Replace with your repo URL
+        
 
         stage('Build with Maven') {
             steps {
