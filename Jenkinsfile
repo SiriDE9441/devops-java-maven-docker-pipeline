@@ -10,22 +10,20 @@ pipeline {
 
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t siri-docker-app .'
+                bat 'docker build -t siri-docker-app .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run siri-docker-app'
+                bat 'docker run siri-docker-app'
             }
         }
     }
 }
-
-    
